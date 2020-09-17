@@ -1,6 +1,6 @@
 import java.util.Random;
 
-//this is now going on GitHub
+//this is now going on GitHub.
 
 public class Sims {
 
