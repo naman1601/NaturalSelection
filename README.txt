@@ -26,7 +26,7 @@ The blobs have a reproduction cycle of 5 days, so a blob will reproduce every 5 
 
 The baby blobs have range ±0.3% that of their parents.
 
-We continue this loop 10,000 times.
+We continue this loop 25,000 times.
 
 The initial and final values of population and average range is then printed.
 
