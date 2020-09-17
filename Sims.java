@@ -2,10 +2,6 @@ import java.util.Random;
 
 //this is now going on GitHub.
 
-//testing git pull
-
-//let us see if this gets deleted
-
 public class Sims {
 
   int daysLived = 0;
