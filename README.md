@@ -34,7 +34,7 @@ We continue this loop 25,000 times.
 
 The initial and final values of population and average range is then printed.
 
->I have tried to include all variables near the top so that you can play around with the values for yourself.
+**I have tried to include all variables near the top so that you can play around with the values for yourself.**
 
 I would really love to hear what you have to say about this! (Suggestions/review or just about anything is welcome!)
 
