@@ -25,16 +25,18 @@ public class Sims {
   public static void main(String[] args) {
     
     //TWEAK THESE VARIABLES TO PLAY AROUND WITH THE WORLD'S SETTINGS(LAWS OF NATURE?) -- COMPLETELY HARMLESS(HOPEFULLY)
+    //----------------------------------------
     //int population = 196;
     int side = 50;
     int population = 4*(side - 1);
     int blobSpawn = 43;
-    //dividing blobSpawn by 100 gives the probability of a blob spawning in a particular grid (only on the boundaries)
     int foodSpawn = 28; 
-    //dividing foodSpawn by 1000 gives the probability of a food particle spawning in a particular grid (all over the grid world)
     double mutation = 0.003;
     int reproductionCycle = 5;
     int cycles = 25000;
+    //dividing blobSpawn by 100 gives the probability of a blob spawning in a particular grid (only on the boundaries)
+    //dividing foodSpawn by 1000 gives the probability of a food particle spawning in a particular grid (all over the grid world)
+    //----------------------------------------
     //HARMLESSLY TWEAK-ABLE VARIABLES END HERE.
 
 
@@ -79,6 +81,9 @@ public class Sims {
     System.out.println("Initially --> Alive : " + blobsAlive + "   Range : " + getRange(side));
 
     int x = 0;
+
+    //And then Naman said, "Let us give to our tiny blobs little huts which they can call home"
+    //(assigning a geometrical co-ordinates to all blobs)
 
     for(int i = 0; i < side; i += 1){
 
