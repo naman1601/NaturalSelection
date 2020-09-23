@@ -83,7 +83,7 @@ public class Sims {
     int x = 0;
 
     //And then Naman said, "Let us give to our tiny blobs little huts which they can call home"
-    //(assigning a geometrical co-ordinates to all blobs)
+    //(assigning geometrical co-ordinates to all blobs)
 
     for(int i = 0; i < side; i += 1){
 
