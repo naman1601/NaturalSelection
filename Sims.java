@@ -112,7 +112,6 @@ public class Sims {
 
     }*/
     
-
     for(int i = 0; i < cycles; i += 1) {
 
       for(int j = 0; j < side; j += 1) {
