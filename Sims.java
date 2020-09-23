@@ -272,7 +272,7 @@ public class Sims {
 
     System.out.println("Finally --> Alive : " + blobsAlive + "   Range : " + avg);
     
-    System.out.print("Average food left uneaten per day : " + foodLeft);
+    System.out.println("Average food left uneaten per day : " + foodLeft);
 
   }
 
