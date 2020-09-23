@@ -88,6 +88,7 @@ public class Sims {
 
           blob[x].xc = i;
           blob[x].yc = j;
+          x += 1;
 
         }
 
@@ -95,15 +96,21 @@ public class Sims {
 
         blob[x].xc = i;
         blob[x].yc = 0;
-
         x += 1;
 
         blob[x].xc = i;
         blob[x].yc = side - 1;
+        x += 1;
 
       }
 
     }
+
+    /*for(int i = 0; i < population; i += 1) {
+
+      System.out.printf("Blob no. %d, co-ordinates : %d, %d\n", i, blob[i].xc, blob[i].yc);
+
+    }*/
     
 
     for(int i = 0; i < cycles; i += 1) {
