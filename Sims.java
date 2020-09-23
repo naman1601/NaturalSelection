@@ -14,7 +14,7 @@ public class Sims {
 
   static double getRange(int val) {
 
-    double temp = (val + 1)/2;
+    double temp = (1.0*val)/2;
 
     double retval = 0.8 * Math.sqrt(2*temp*temp);
 
