@@ -24,13 +24,21 @@ public class Sims {
 
   public static void main(String[] args) {
     
-    int population = 196;
+    //TWEAK THESE VARIABLES TO PLAY AROUND WITH THE WORLD'S SETTINGS(LAWS OF NATURE?) -- COMPLETELY HARMLESS(HOPEFULLY)
+    //int population = 196;
     int side = 50;
+    int population = 4*(side - 1);
     int blobSpawn = 43;
-    int foodSpawn = 28;
+    //dividing blobSpawn by 100 gives the probability of a blob spawning in a particular grid (only on the boundaries)
+    int foodSpawn = 28; 
+    //dividing foodSpawn by 1000 gives the probability of a food particle spawning in a particular grid (all over the grid world)
     double mutation = 0.003;
     int reproductionCycle = 5;
     int cycles = 25000;
+    //HARMLESSLY TWEAK-ABLE VARIABLES END HERE.
+
+
+    //And then Naman said, "Let there be light" -- (laying the basic structure for the world)
     
     Random random = new Random();
     Sims[] blob = new Sims[population];
@@ -39,6 +47,8 @@ public class Sims {
     int fastest = 0;
     int blobsAlive = 0;
     double foodLeft = 0;
+
+    //And the Naman said, "Let there be no food initially"
 
     for(int i = 0; i < side; i += 1) {
 
@@ -49,6 +59,8 @@ public class Sims {
       }
 
     }
+
+    //And then Naman said, "Let some blobs be brought to life"
 
     for(int i = 0; i < population; i += 1) {
 
