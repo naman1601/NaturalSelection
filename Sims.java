@@ -38,6 +38,7 @@ public class Sims {
     int randomNum = 0;
     int fastest = 0;
     int blobsAlive = 0;
+    double foodLeft = 0;
 
     for(int i = 0; i < side; i += 1) {
 
@@ -92,7 +93,6 @@ public class Sims {
 
     }
     
-    //double foodLeft = 0;
 
     for(int i = 0; i < cycles; i += 1) {
 
@@ -104,7 +104,7 @@ public class Sims {
           if(randomNum < foodSpawn) {
 
             field[j][k] = 1;
-            //foodLeft += 1;
+            foodLeft += 1;
 
           }
 
@@ -143,7 +143,7 @@ public class Sims {
 
               blob[fastest].hasFood = true;
               field[j][k] = 0;
-              //foodLeft -= 1;
+              foodLeft -= 1;
 
             }
 
@@ -250,11 +250,11 @@ public class Sims {
 
     avg = avg/blobsAlive;
     
-    //foodLeft = foodLeft/cycles;
+    foodLeft = foodLeft/cycles;
 
     System.out.println("Finally --> Alive : " + blobsAlive + "   Range : " + avg);
     
-    //System.out.print("Average food left uneaten per day : " + foodLeft);
+    System.out.print("Average food left uneaten per day : " + foodLeft);
 
   }
 

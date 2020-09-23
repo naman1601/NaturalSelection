@@ -32,7 +32,7 @@ The baby blobs have range ±0.3% that of their parents.
 
 We continue this loop 25,000 times.
 
-The initial and final values of population and average range is then printed.
+The initial and final values of population and average range are then printed, along with the average number of food particles left uneaten each day.
 
 ### I have tried to include all variables near the top so that you can play around with the values for yourself.
 
