@@ -231,7 +231,7 @@ public class Sims {
 
       int counter = 0;
 
-      for(int j = 0; counter <= count; j += 1) {
+      for(int j = 0; counter < count; j += 1) {
 
         if(!blob[j].isAlive) {
 
