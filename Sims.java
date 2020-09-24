@@ -33,7 +33,7 @@ public class Sims {
     int foodSpawn = 28; 
     double mutation = 0.003;
     int reproductionCycle = 5;
-    int cycles = 25000;
+    int cycles = 25003;
     //dividing blobSpawn by 100 gives the probability of a blob spawning in a particular grid (only on the boundaries)
     //dividing foodSpawn by 1000 gives the probability of a food particle spawning in a particular grid (all over the grid world)
     //----------------------------------------
@@ -49,6 +49,7 @@ public class Sims {
     int fastest = 0;
     int blobsAlive = 0;
     double foodLeft = 0;
+    int finalCycle = 0;
 
     //And the Naman said, "Let there be no food initially"
 
@@ -245,6 +246,7 @@ public class Sims {
       //and then Naman said, "Go forth and multiply!"
 
       if(count > notAlive) count = notAlive;
+      if(i == (cycles - 1)) finalCycle = count;
 
       int counter = 0;
       int toss = 0;
@@ -298,6 +300,8 @@ public class Sims {
     foodLeft = foodLeft/cycles;
 
     System.out.println("Finally --> Alive : " + blobsAlive + "   Range : " + avg);
+
+    System.out.println("Blobs alive on the final cycle before reproduction :" + (blobsAlive - finalCycle));
     
     System.out.println("Average food left uneaten per day : " + foodLeft);
 
