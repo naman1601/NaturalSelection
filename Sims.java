@@ -8,6 +8,7 @@ public class Sims {
   double range = 0;
   boolean isAlive = false;
   boolean hasFood = false;
+  int reproductionCycle = 0;
   //boolean canReproduce = false;
   int xc = 0;
   int yc = 0;
@@ -32,8 +33,7 @@ public class Sims {
     int blobSpawn = 43;
     int foodSpawn = 28; 
     double mutation = 0.003;
-    int reproductionCycle = 5;
-    int cycles = 25003;
+    int cycles = 25000;
     //dividing blobSpawn by 100 gives the probability of a blob spawning in a particular grid (only on the boundaries)
     //dividing foodSpawn by 1000 gives the probability of a food particle spawning in a particular grid (all over the grid world)
     //----------------------------------------
@@ -48,6 +48,7 @@ public class Sims {
     int randomNum = 0;
     int fastest = 0;
     int blobsAlive = 0;
+    double avg = 0;
     double foodLeft = 0;
     int finalCycle = 0;
 
@@ -83,8 +84,8 @@ public class Sims {
 
     int x = 0;
 
-    //And then Naman said, "Let us give to our tiny blobs little huts which they can call home"
-    //(assigning geometrical co-ordinates to all blobs)
+    //And then Naman said, "Let us give to our tiny blobs little huts which they can call home, and the time they take to breed one in their own image"
+    //(assigning geometrical co-ordinates and reproduction cycles to all blobs)
 
     for(int i = 0; i < side; i += 1){
 
@@ -94,6 +95,7 @@ public class Sims {
 
           blob[x].xc = i;
           blob[x].yc = j;
+          blob[x].reproductionCycle = 7 - random.nextInt(5);
           x += 1;
 
         }
@@ -102,10 +104,12 @@ public class Sims {
 
         blob[x].xc = i;
         blob[x].yc = 0;
+        blob[x].reproductionCycle = 7 - random.nextInt(5);
         x += 1;
 
         blob[x].xc = i;
         blob[x].yc = side - 1;
+        blob[x].reproductionCycle = 7 - random.nextInt(5);
         x += 1;
 
       }
@@ -114,7 +118,7 @@ public class Sims {
 
     /*for(int i = 0; i < population; i += 1) {
 
-      System.out.printf("Blob no. %d, co-ordinates : %d, %d\n", i, blob[i].xc, blob[i].yc);
+      System.out.printf("Blob no. %d, co-ordinates : %d, %d\nReproduction cycle : %d days\n", i, blob[i].xc, blob[i].yc, blob[i].reproductionCycle);
 
     }*/
 
@@ -208,7 +212,7 @@ public class Sims {
           blob[j].hasFood = false;
           blob[j].daysLived += 1;
 
-          if(blob[j].daysLived % reproductionCycle == 0) {
+          if(blob[j].daysLived % blob[j].reproductionCycle == 0) {
 
             count += 1;
             avgRange += blob[j].range;
@@ -244,6 +248,7 @@ public class Sims {
 
 
       //and then Naman said, "Go forth and multiply!"
+      //also, mutation -- this is where the evolution happens!(for better or worse)
 
       if(count > notAlive) count = notAlive;
       if(i == (cycles - 1)) finalCycle = count;
@@ -257,8 +262,14 @@ public class Sims {
 
           blob[j].isAlive = true;
           toss = random.nextInt(2);
-          if(toss == 0) blob[j].range = (1 + mutation) * avgRange;
-          if(toss == 1) blob[j].range = (1 - mutation) * avgRange;
+          if(toss == 0) {
+            blob[j].range = (1 + mutation) * avgRange;
+            //if(blob[j].reproductionCycle > 3) blob[j].reproductionCycle -= 1;
+          }
+          if(toss == 1) {
+            blob[j].range = (1 - mutation) * avgRange;
+            //if(blob[j].reproductionCycle < 7) blob[j].reproductionCycle += 1;
+          }
           counter += 1;
 
         }
@@ -279,7 +290,7 @@ public class Sims {
 
     }
 
-    double avg = 0;
+    avg = 0;
     blobsAlive = 0;
 
     //counting the number of blobs alive at the end, and their average range
@@ -301,7 +312,7 @@ public class Sims {
 
     System.out.println("Finally --> Alive : " + blobsAlive + "   Range : " + avg);
 
-    System.out.println("Blobs alive on the final cycle before reproduction :" + (blobsAlive - finalCycle));
+    //System.out.println("Blobs alive on the final cycle before reproduction :" + (blobsAlive - finalCycle));
     
     System.out.println("Average food left uneaten per day : " + foodLeft);
 
