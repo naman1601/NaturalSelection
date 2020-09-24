@@ -26,7 +26,7 @@ Then, that food particle is removed from the grid world and that blob will no lo
 
 We do this for all food particles. Ultimately, a few slower blobs are left without any food particles or shelter for the night, and they die(are removed from the grid world) leaving their homes empty.
 
-The blobs have a reproduction cycle of 5 days, so a blob will reproduce every 5 days. However, the number of blobs will not exceed 196, which means that if there are 196 blobs present (very very unlikely, almost impossible with the constrains we have set), then no blobs will reproduce.
+The blobs have a reproduction cycle between 3-7 days, say `r`(randomized for each blob), so a blob will reproduce every `r` days. However, the number of blobs will not exceed 196, which means that if there are 196 blobs present (very very unlikely, almost impossible with the constrains we have set), then no blobs will reproduce.
 
 The baby blobs have range ±0.3% that of their parents.
 
