@@ -116,8 +116,13 @@ public class Sims {
       System.out.printf("Blob no. %d, co-ordinates : %d, %d\n", i, blob[i].xc, blob[i].yc);
 
     }*/
+
+    
+    //and then Naman said, "Let's go"
     
     for(int i = 0; i < cycles; i += 1) {
+
+      //and then Naman said, "Let the world be filled with food so that the blobs may eat and live"
 
       for(int j = 0; j < side; j += 1) {
 
@@ -135,6 +140,8 @@ public class Sims {
 
       }
 
+      //checking each food particle one-by-one to see which blob(if any) can get to it in time, and the giving it to the fastest blob(if any)
+
       for(int j = 0; j < side; j += 1) {
 
         for(int k = 0; k < side; k += 1) {
@@ -144,6 +151,8 @@ public class Sims {
             double time = 1000;
 
             fastest = -1;
+
+            //finding the fastest blob (if any) for the food particle.
 
             for(int l = 0; l < population; l += 1) {
 
@@ -162,6 +171,8 @@ public class Sims {
 
             }
 
+            //giving the food particle to the fastest blob(if any)
+
             if(fastest != -1) {
 
               blob[fastest].hasFood = true;
@@ -175,6 +186,9 @@ public class Sims {
         }
 
       }
+
+      //now the blobs have made it back to their homes
+      //if they managed to get food, they'll live and might even reproduce!
 
       double avgRange = 0;
       int count = 0;
@@ -207,7 +221,7 @@ public class Sims {
       avgRange = avgRange/count;
 
       //double avgRange = 0;
-      int toss = 0;
+      //int toss = 0;
       //int count = 0;
       //int notAlive = 0;
 
@@ -227,9 +241,13 @@ public class Sims {
 
       }*/
 
+
+      //and then Naman said, "Go forth and multiply!"
+
       if(count > notAlive) count = notAlive;
 
       int counter = 0;
+      int toss = 0;
 
       for(int j = 0; counter < count; j += 1) {
 
@@ -245,6 +263,8 @@ public class Sims {
 
       }
 
+      //and then Naman said, "Let the world be rid of all uneaten food, so that the next day, we may begin anew!"
+
       for(int j = 0; j < side; j += 1) {
 
         for(int k = 0; k < side; k += 1) {
@@ -259,6 +279,8 @@ public class Sims {
 
     double avg = 0;
     blobsAlive = 0;
+
+    //counting the number of blobs alive at the end, and their average range
 
     for(int i = 0; i < population; i += 1) {
 
